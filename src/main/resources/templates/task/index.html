@@ -12,9 +12,17 @@
     </style>
 </head>
 <body >
-    <ul>
-        <li th:each="task : ${tasks}" th:text="${task.title}"></li>
-    </ul>
-    <p th:text="${tasks}" > </p>
+    <h1>Epic Task</h1> 
+
+    <div class="content">
+        <div class="tasks">
+            <div class="card-task" th:each = "task : ${tasks}">
+                <h2 th:text="${task.title}"></h2>
+                <p th:text="${task.description}"></p>
+            </div>
+        </div>
+    </div>
+
+    <a href="/task/new" class="btn">Nova Tarefa</a>
 </body>
 </html>
