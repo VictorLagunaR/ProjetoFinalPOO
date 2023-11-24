@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
+    <title>Cadastrar Nova Lista</title>
 </head>
 <body>
-    <h1>Cadastrar Tarefa</h1>
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+    <h1 style="text-align: center;">Cadastrar Nova Lista</h1>
     <div class="content">
         <form action="" method="post" th:object="${task}">
             <label for="title">Título</label>
@@ -18,10 +23,6 @@
             <label for="description">Descrição</label>
             <textarea id="description" th:field="*{description}"></textarea>
             <span th:erros="*{description}"></span>
-    
-            <label for="score">Pontos</label>
-            <input type="number" th:field="*{score}">
-            <span th:erros="*{score}"></span>
 
             <div class="actions">
                 <a href="/task" class="btn">cancelar</a>

@@ -22,7 +22,4 @@ public class Task {
     
     @Size(min = 10, message =  "Digite uma descrição com pelo menos 10 caracteres")
     String description;
-    
-    @Min(value = 1, message = "Não pode ser negativo")
-    Integer score;
 }
