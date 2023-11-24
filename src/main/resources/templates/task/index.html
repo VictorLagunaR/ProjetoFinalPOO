@@ -20,15 +20,22 @@
     
     <h1 style="text-align: center;">Lista de Compras</h1> 
 
-    <div class="content">
-        <div class="listas">
-            <div class="card-lista" th:each = "lista : ${listas}">
-                <h2 th:text="${lista.title}"></h2>
-                <p th:text="${lista.description}"></p>
+    <main>
+        <div class="content">
+            <div class="tasks">
+                <div class="card-task" th:each = "task : ${tasks}">
+                    <h2 th:text="${task.title}"></h2>
+                    <p th:text="${task.description}"></p>
+                    <div class="action">
+                        <form th:action="@{'/tasks/{id}' (id=${task.id}) }" method="post">
+                            <button>apagar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <a href="/lista/new" class="btn">Nova Lista</a>
-    </div>
+        <a href="/task/new" class="btn">Nova Lista</a>
+    </main>
 
 </body>
 </html>
