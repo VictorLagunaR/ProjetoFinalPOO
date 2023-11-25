@@ -15,7 +15,7 @@
     </div>
     <h1 style="text-align: center;">Cadastrar Nova Lista</h1>
     <div class="content">
-        <form action="" method="post" th:object="${task}">
+        <form th:action="" method="post" th:object="${task}">
             <label for="title">Título</label>
             <input type="text" th:field="*{title}">
             <span th:erros="*{title}"></span>
