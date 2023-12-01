@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <title>Minha lista de Compras</title>
     <style>
@@ -17,25 +18,43 @@
         <div class='wave -two'></div>
         <div class='wave -three'></div>
     </div>
+
+    <button class="logout">
+        <span class="material-symbols-outlined logoutIcon">
+            logout
+        </span>
+    </button>
     
     <h1 style="text-align: center;">Lista de Compras</h1> 
 
     <main>
         <div class="content">
-            <div class="tasks">
-                <div class="card-task" th:each = "task : ${tasks}">
-                    <h2 th:text="${task.title}"></h2>
-                    <p th:text="${task.description}"></p>
+            <div class="listas">
+                <div class="card-lista" th:each = "task : ${tasks}">
+                    <div style="max-width: 50%; max-height: 80%;">
+                        <h2 th:text="${task.title}"></h2>
+                        <p th:text="${task.description}"></p>
+                    </div>
                     <div class="action">
                         <form th:action="@{'/task/{id}' (id=${task.id}) }" th:method="delete">
-                            <button class="btn red">apagar</button>
+                            <button class="remove">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/task/new" class="btn">Nova Lista</a>
+        <a href="/task/new" class="btn" style="
+            width: 450px;
+            background: #ffffff05;
+            text-align: center;">
+            Nova Lista
+        </a>
     </main>
 
+    <script src="javascript.js"></script>
 </body>
 </html>
